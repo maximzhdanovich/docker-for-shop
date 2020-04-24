@@ -7,4 +7,4 @@ Docker проект для развертывания Book_shop
 5) Запустить скрипт buildProject.bat
 6) Запустить скрипт startAll.bat 
 
-Проект запустится по адресу http://localhost:8080/
+Проект запустится по адресу http://localhost:8080/(под пользователем login:admin password:admin)
