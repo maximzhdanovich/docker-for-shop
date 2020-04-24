@@ -6,4 +6,5 @@ Docker проект для развертывания Book_shop
 4) Необходимо скопировать settings.xml и вставить в папку  `C:/Users/<username>/.m2`
 5) Запустить скрипт buildProject.bat
 6) Запустить скрипт startAll.bat 
+
 Проект запустится по адресу http://localhost:8080/
