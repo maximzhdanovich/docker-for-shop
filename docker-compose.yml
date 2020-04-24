@@ -1,0 +1,29 @@
+version: "3"
+services:
+  mysql:
+    image: custom/mysql
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    ports:
+      - "3306:3306"
+    container_name: "test-mysql"
+    volumes:
+      - ./mysql/shared/database/:/var/lib/mysql
+  shop:
+    image: custom/shop1
+    build:
+      context: ./project
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    external_links:
+      - "test-mysql:mysql"
+    command: sh -c "/wait && /sayhello"
+    environment:
+      - WAIT_HOSTS=mysql:3306
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=30
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+
+
